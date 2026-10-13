@@ -1,0 +1,82 @@
+PASS src/features/products/api.test.ts (5.033 s)
+  fetchProducts
+    √ tra ve danh sach san pham khi server tra ve 200 (31 ms)
+    √ nem loi khi server tra ve loi (45 ms)
+
+PASS src/features/cart/cartSlice.test.ts
+  cartSlice - addItem
+    √ them san pham moi vao gio hang (58 ms)
+    √ tang so luong khi them san pham da co trong gio (4 ms)
+  cartSlice - removeItem
+    √ xoa dung san pham theo id (15 ms)
+    √ bo qua khi id khong ton tai, state giu nguyen (3 ms)
+  cartSlice - updateQuantity
+    √ cap nhat so luong va tinh lai tong tien (3 ms)
+    √ xoa san pham khoi gio khi so luong <= 0 (2 ms)
+    √ bo qua khi cap nhat id khong ton tai (1 ms)
+  cartSlice - clearCart
+    √ xoa toan bo san pham trong gio (7 ms)
+
+PASS src/features/cart/cartUtils.test.ts (5.178 s)
+  calcTotal
+    √ tra ve 0 khi gio hang rong (24 ms)
+    √ cong dung gia x so luong voi 1 san pham (2 ms)
+    √ cong dung tong khi co nhieu san pham (5 ms)
+  calcTotalQuantity
+    √ cong dung tong so luong cua tat ca san pham (1 ms)
+  applyDiscount
+    √ giam 10% khi dung ma SALE10 (3 ms)
+    √ khong phan biet chu hoa chu thuong cua ma giam gia (1 ms)
+    √ nem loi khi ma giam gia khong ton tai (59 ms)
+    √ nem loi khi tong tien am (5 ms)
+  formatPrice
+    √ dinh dang so thanh tien VND co dau phan cach (343 ms)
+
+PASS src/hooks/useDebounce.test.ts (5.724 s)
+  useDebounce
+    √ tra ve gia tri ban dau ngay lap tuc (93 ms)
+    √ chi cap nhat gia tri sau khi het 300ms (34 ms)
+    √ chi giu lai lan go cuoi cung khi go lien tuc (14 ms)
+    √ dung delay mac dinh 300ms khi khong truyen delay (21 ms)
+
+PASS src/features/products/ProductCard.test.tsx (6.48 s)
+  ProductCard
+    √ hien thi ten, gia va so luong con lai cua san pham (167 ms)
+    √ goi onAdd dung 1 lan voi id san pham khi bam nut Them (303 ms)
+    √ vo hieu hoa nut va bao het hang khi stock = 0 (48 ms)
+    √ khong goi onAdd khi san pham het hang (143 ms)
+
+PASS src/features/cart/CartSummary.test.tsx (6.992 s)
+  CartSummary (integration voi Redux store)
+    √ hien thi "Gio hang trong" khi chua co san pham nao (103 ms)
+    √ hien thi danh sach san pham va dung tong tien (328 ms)
+    √ xoa san pham khoi gio va cap nhat lai tong tien khi bam Xoa (336 ms)
+    √ hien thi lai "Gio hang trong" sau khi bam Xoa gio hang (211 ms)
+
+PASS src/features/products/ProductList.test.tsx (7.031 s)
+  ProductList (bat dong bo voi API duoc mock)
+    √ hien thi "Dang tai..." roi hien danh sach khi API thanh cong (273 ms)
+    √ hien thi thong bao loi khi API that bai (187 ms)
+    √ hien thi "Khong co san pham nao" khi API tra ve mang rong (40 ms)
+    √ them san pham vao gio hang khi bam nut Them (luong day du) (491 ms)
+
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |      100 |     100 |     100 |                   
+ features/cart     |     100 |      100 |     100 |     100 |                   
+  CartSummary.tsx  |     100 |      100 |     100 |     100 |                   
+  cartSlice.ts     |     100 |      100 |     100 |     100 |                   
+  cartUtils.ts     |     100 |      100 |     100 |     100 |                   
+ features/products |     100 |      100 |     100 |     100 |                   
+  ProductCard.tsx  |     100 |      100 |     100 |     100 |                   
+  ProductList.tsx  |     100 |      100 |     100 |     100 |                   
+  api.ts           |     100 |      100 |     100 |     100 |                   
+ hooks             |     100 |      100 |     100 |     100 |                   
+  useDebounce.ts   |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+Test Suites: 7 passed, 7 total
+Tests:       35 passed, 35 total
+Snapshots:   0 total
+Time:        15.099 s
+Ran all test suites.
